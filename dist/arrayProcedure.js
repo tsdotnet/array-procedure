@@ -4,6 +4,7 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.max = exports.min = exports.quotient = exports.product = exports.average = exports.sum = void 0;
 /**
  * Returns the sum of the values contained.
  * @param {ArrayLike<number>} source
