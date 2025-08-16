@@ -8,8 +8,11 @@
   "main": "dist/arrayProcedure.js",
   "module": "dist/arrayProcedure.mjs",
   "exports": {
-    "import": "./dist/arrayProcedure.mjs",
-    "require": "./dist/arrayProcedure.js"
+    ".": {
+      "import": "./dist/arrayProcedure.mjs",
+      "require": "./dist/arrayProcedure.js",
+      "types": "./dist/arrayProcedure.d.ts"
+    }
   },
   "keywords": [
     "array",
