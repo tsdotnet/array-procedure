@@ -1,14 +1,22 @@
+"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sum = sum;
+exports.average = average;
+exports.product = product;
+exports.quotient = quotient;
+exports.min = min;
+exports.max = max;
 /**
  * Returns the sum of the values contained.
  * @param {ArrayLike<number>} source
  * @param {boolean} ignoreNaN
  * @returns {number}
  */
-export function sum(source, ignoreNaN = false) {
+function sum(source, ignoreNaN = false) {
     if (!source || !source.length)
         return 0;
     let result = 0;
@@ -33,7 +41,7 @@ export function sum(source, ignoreNaN = false) {
  * @param {boolean} ignoreNaN
  * @returns {number}
  */
-export function average(source, ignoreNaN = false) {
+function average(source, ignoreNaN = false) {
     if (!source || !source.length)
         return NaN;
     let result = 0, count;
@@ -62,7 +70,7 @@ export function average(source, ignoreNaN = false) {
  * @param {boolean} ignoreNaN
  * @returns {number}
  */
-export function product(source, ignoreNaN = false) {
+function product(source, ignoreNaN = false) {
     if (!source || !source.length)
         return NaN;
     let result = 1;
@@ -92,7 +100,7 @@ export function product(source, ignoreNaN = false) {
  * @param ignoreNaN Will cause this skip any NaN values.
  * @returns {number}
  */
-export function quotient(source, ignoreNaN = false) {
+function quotient(source, ignoreNaN = false) {
     const len = source ? source.length : 0;
     if (len < 2)
         return NaN;
@@ -149,7 +157,7 @@ function ifSet(source, start, ignoreNaN, predicate) {
  * @param {boolean} ignoreNaN
  * @returns {number}
  */
-export function min(source, ignoreNaN = false) {
+function min(source, ignoreNaN = false) {
     return ifSet(source, +Infinity, ignoreNaN, (n, result) => n < result);
 }
 /**
@@ -158,7 +166,7 @@ export function min(source, ignoreNaN = false) {
  * @param {boolean} ignoreNaN
  * @returns {number}
  */
-export function max(source, ignoreNaN = false) {
+function max(source, ignoreNaN = false) {
     return ifSet(source, -Infinity, ignoreNaN, (n, result) => n > result);
 }
 //# sourceMappingURL=arrayProcedure.js.map
