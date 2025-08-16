@@ -4,7 +4,12 @@
  * Licensing: MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.max = exports.min = exports.quotient = exports.product = exports.average = exports.sum = void 0;
+exports.sum = sum;
+exports.average = average;
+exports.product = product;
+exports.quotient = quotient;
+exports.min = min;
+exports.max = max;
 /**
  * Returns the sum of the values contained.
  * @param {ArrayLike<number>} source
@@ -30,7 +35,6 @@ function sum(source, ignoreNaN = false) {
     }
     return result;
 }
-exports.sum = sum;
 /**
  * Returns the average of the values contained.
  * @param {ArrayLike<number>} source
@@ -60,7 +64,6 @@ function average(source, ignoreNaN = false) {
     }
     return !count || isNaN(result) ? NaN : result / count;
 }
-exports.average = average;
 /**
  * Returns the product (multiplication) of the values contained.
  * @param {ArrayLike<number>} source
@@ -91,7 +94,6 @@ function product(source, ignoreNaN = false) {
     }
     return result;
 }
-exports.product = product;
 /**
  * Takes the first number and divides it by all following.
  * @param source
@@ -122,7 +124,6 @@ function quotient(source, ignoreNaN = false) {
     }
     return found ? result : NaN;
 }
-exports.quotient = quotient;
 function ifSet(source, start, ignoreNaN, predicate) {
     if (!source || !source.length)
         return NaN;
@@ -159,7 +160,6 @@ function ifSet(source, start, ignoreNaN, predicate) {
 function min(source, ignoreNaN = false) {
     return ifSet(source, +Infinity, ignoreNaN, (n, result) => n < result);
 }
-exports.min = min;
 /**
  * Returns the least positive number in the array.
  * @param {ArrayLike<number>} source
@@ -169,5 +169,4 @@ exports.min = min;
 function max(source, ignoreNaN = false) {
     return ifSet(source, -Infinity, ignoreNaN, (n, result) => n > result);
 }
-exports.max = max;
 //# sourceMappingURL=arrayProcedure.js.map
