@@ -118,14 +118,16 @@ export function quotient (source: ArrayLike<number>, ignoreNaN: boolean = false)
 	if(len<2) return NaN;
 
 	let result = source[0];
+	if(result === undefined || isNaN(result)) return NaN;
 
 	let found = false;
 	for(let i = 1; i<len; i++)
 	{
 		const n = source[i];
-		if(n===0)
+		if(n === undefined) return NaN; // Return NaN for undefined values
+		if(n === 0)
 		{
-			return NaN;
+			return NaN; // Division by zero
 		}
 		if(isNaN(n))
 		{

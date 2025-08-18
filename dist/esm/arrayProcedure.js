@@ -2,13 +2,7 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT
  */
-/**
- * Returns the sum of the values contained.
- * @param {ArrayLike<number>} source
- * @param {boolean} ignoreNaN
- * @returns {number}
- */
-export function sum(source, ignoreNaN = false) {
+function sum(source, ignoreNaN = false) {
     if (!source || !source.length)
         return 0;
     let result = 0;
@@ -27,13 +21,7 @@ export function sum(source, ignoreNaN = false) {
     }
     return result;
 }
-/**
- * Returns the average of the values contained.
- * @param {ArrayLike<number>} source
- * @param {boolean} ignoreNaN
- * @returns {number}
- */
-export function average(source, ignoreNaN = false) {
+function average(source, ignoreNaN = false) {
     if (!source || !source.length)
         return NaN;
     let result = 0, count;
@@ -56,13 +44,7 @@ export function average(source, ignoreNaN = false) {
     }
     return !count || isNaN(result) ? NaN : result / count;
 }
-/**
- * Returns the product (multiplication) of the values contained.
- * @param {ArrayLike<number>} source
- * @param {boolean} ignoreNaN
- * @returns {number}
- */
-export function product(source, ignoreNaN = false) {
+function product(source, ignoreNaN = false) {
     if (!source || !source.length)
         return NaN;
     let result = 1;
@@ -86,20 +68,18 @@ export function product(source, ignoreNaN = false) {
     }
     return result;
 }
-/**
- * Takes the first number and divides it by all following.
- * @param source
- * @param ignoreNaN Will cause this skip any NaN values.
- * @returns {number}
- */
-export function quotient(source, ignoreNaN = false) {
+function quotient(source, ignoreNaN = false) {
     const len = source ? source.length : 0;
     if (len < 2)
         return NaN;
     let result = source[0];
+    if (result === undefined || isNaN(result))
+        return NaN;
     let found = false;
     for (let i = 1; i < len; i++) {
         const n = source[i];
+        if (n === undefined)
+            return NaN;
         if (n === 0) {
             return NaN;
         }
@@ -143,22 +123,12 @@ function ifSet(source, start, ignoreNaN, predicate) {
     }
     return result;
 }
-/**
- * Returns the most positive number in the array.
- * @param {ArrayLike<number>} source
- * @param {boolean} ignoreNaN
- * @returns {number}
- */
-export function min(source, ignoreNaN = false) {
+function min(source, ignoreNaN = false) {
     return ifSet(source, +Infinity, ignoreNaN, (n, result) => n < result);
 }
-/**
- * Returns the least positive number in the array.
- * @param {ArrayLike<number>} source
- * @param {boolean} ignoreNaN
- * @returns {number}
- */
-export function max(source, ignoreNaN = false) {
+function max(source, ignoreNaN = false) {
     return ifSet(source, -Infinity, ignoreNaN, (n, result) => n > result);
 }
+
+export { average, max, min, product, quotient, sum };
 //# sourceMappingURL=arrayProcedure.js.map
