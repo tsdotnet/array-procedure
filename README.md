@@ -1,4 +1,4 @@
-![@tsdotnet/array-procedure: Math over number arrays. Sum, average, min, max and more.](https://cdn.jsdelivr.net/gh/tsdotnet/array-procedure@master/assets/banner.svg)
+<a href="https://tsdotnet.github.io/array-procedure/"><img src="https://cdn.jsdelivr.net/gh/tsdotnet/array-procedure@master/assets/banner.svg" alt="@tsdotnet/array-procedure: Math over number arrays. Sum, average, min, max and more."></a>
 
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/array-procedure.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/array-procedure)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/tsdotnet/array-procedure/blob/master/LICENSE)
